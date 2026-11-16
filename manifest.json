@@ -1,0 +1,18 @@
+﻿{
+    "id":  "/station-admin",
+    "name":  "Station Ghérib",
+    "short_name":  "S.Ghérib",
+    "start_url":  "./index.html",
+    "scope":  "./index.html",
+    "display":  "standalone",
+    "background_color":  "#0a0e18",
+    "theme_color":  "#0a0e18",
+    "icons":  [
+                  {
+                      "src":  "icon_index.svg",
+                      "sizes":  "any",
+                      "type":  "image/svg+xml",
+                      "purpose":  "any maskable"
+                  }
+              ]
+}

@@ -2540,7 +2540,7 @@
       r.dettes = r.achatsPA - r.regle - r.reglF;   /* achats non payés au comptant, moins règlements fournisseurs */
       r.attendu = r.init + r.marge + r.dettes; r.justifie = r.invVal + r.vers + r.versCaisse + r.perem + r.frais + r.sal; r.ecart = r.justifie - r.attendu; return r;
     }
-    let cafeSec = {}; try { cafeSec = JSON.parse(localStorage.getItem("cafeSec") || "{}") || {}; } catch (e) { }
+    let cafeSec = {}; try { cafeSec = JSON.parse(localStorage.getItem("stationGherib_cafeSec") || "{}") || {}; } catch (e) { }
     { let _o = false; Object.keys(cafeSec).forEach(k => { if (cafeSec[k]) { if (_o) cafeSec[k] = false; _o = true; } }); }   /* une seule partie ouverte */
     const cafeSecCls = k => "cafe-sec" + (cafeSec[k] ? "" : " closed");
     function cafeToggle(k, h) {
@@ -2548,7 +2548,7 @@
       /* accordéon : ouvrir une partie replie toutes les autres */
       if (open) { Object.keys(cafeSec).forEach(x => { cafeSec[x] = false; }); document.querySelectorAll(".cafe-sec").forEach(e => e.classList.add("closed")); }
       cafeSec[k] = open;
-      try { localStorage.setItem("cafeSec", JSON.stringify(cafeSec)); } catch (e) { }
+      try { localStorage.setItem("stationGherib_cafeSec", JSON.stringify(cafeSec)); } catch (e) { }
       h.closest(".cafe-sec").classList.toggle("closed", !open);
       const w = h.closest(".cafe-wrap"); if (w) w.classList.toggle("has-open", open);
       fitViews();
